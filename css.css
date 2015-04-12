@@ -1,0 +1,28 @@
+
+ 
+#id02 {
+	font-family:"Arial";
+    background-color:black;
+    color:white;
+    text-align:center;
+    padding:5px;
+}
+ 
+#id01 {
+	font-family:"Arial";
+	line-height:30px;
+    background-color:#eeeeee;
+    height:800px;
+    width: 300px;
+    float:left;
+    padding:5px;
+}
+
+#id03 {
+	font-family:"Arial";
+    width:350px;
+    float:left;
+    padding:30px;
+}
+
+
