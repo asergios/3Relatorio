@@ -1,32 +1,117 @@
 <html>
-	<link rel="stylesheet" type="text/css" href="css.css">
-	
+	<link rel="stylesheet" type="text/css" href="css">
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 <body>
 	<div id="id02">
 		<h1>Currency Converter</h1>
 	</div>
 	<div id="id01" align="center"></div>
-	<script type="text/javascript" src="js.js"></script>
+	<!--<script type="text/javascript" src="js"></script>-->
     <div id="id03">
-		<form action="convert" method="get" name="f">
+		<form action="js" method="get" name="f">
 			</br>
-			<input name=value value="1" size="5" maxlength="12"/></br>
+			<input id=value name=value value="1" size="5" maxlength="12"/></br>
 			
-			<select name=from1 value="">
-			<option value="EUR"> EUR </option>
-			<option value="USD"> USD </option>
+			<select id="currency_from" name="currency_from" value="">
+				<option value="EUR"> EUR </option>
+				<option value="USD"> USD </option>
+				<option value="JPY"> JPY </option>
+				<option value="BGN"> BGN </option>
+				<option value="CZK"> CZK </option>
+				<option value="DKK"> DKK </option>
+				<option value="GBP"> GBP </option>
+				<option value="HUF"> HUF </option>
+				<option value="PLN"> PLN </option>
+				<option value="RON"> RON </option>
+				<option value="SEK"> SEK </option>
+				<option value="CHF"> CHF </option>
+				<option value="NOK"> NOK </option>
+				<option value="HRK"> HRK </option>
+				<option value="RUB"> RUB </option>
+				<option value="TRY"> TRY </option>
+				<option value="AUD"> AUD </option>
+				<option value="BRL"> BRL </option>
+				<option value="CAD"> CAD </option>
+				<option value="CNY"> CNY </option>
+				<option value="HKD"> HKD </option>
+				<option value="IDR"> IDR </option>
+				<option value="ILS"> ILS </option>
+				<option value="INR"> INR </option>
+				<option value="KRW"> KRW </option>
+				<option value="MXN"> MXN </option>
+				<option value="MYR"> MYR </option>
+				<option value="NZD"> NZD </option>
+				<option value="PHP"> PHP </option>
+				<option value="SGD"> SGD </option>
+				<option value="THB"> THB </option>
+				<option value="ZAR"> ZAR </option>
 			</select>
 			<div style="padding: 6px 8px">
 			to 
 			</div>
-			<select name=to value="">
-			<option value="EUR"> EUR </option>
-			<option value="USD"> USD </option>
+			<select id="currency_to" name="currency_to" value="">
+				<option value="USD"> USD </option>
+				<option value="EUR"> EUR </option>
+				<option value="JPY"> JPY </option>
+				<option value="BGN"> BGN </option>
+				<option value="CZK"> CZK </option>
+				<option value="DKK"> DKK </option>
+				<option value="GBP"> GBP </option>
+				<option value="HUF"> HUF </option>
+				<option value="PLN"> PLN </option>
+				<option value="RON"> RON </option>
+				<option value="SEK"> SEK </option>
+				<option value="CHF"> CHF </option>
+				<option value="NOK"> NOK </option>
+				<option value="HRK"> HRK </option>
+				<option value="RUB"> RUB </option>
+				<option value="TRY"> TRY </option>
+				<option value="AUD"> AUD </option>
+				<option value="BRL"> BRL </option>
+				<option value="CAD"> CAD </option>
+				<option value="CNY"> CNY </option>
+				<option value="HKD"> HKD </option>
+				<option value="IDR"> IDR </option>
+				<option value="ILS"> ILS </option>
+				<option value="INR"> INR </option>
+				<option value="KRW"> KRW </option>
+				<option value="MXN"> MXN </option>
+				<option value="MYR"> MYR </option>
+				<option value="NZD"> NZD </option>
+				<option value="PHP"> PHP </option>
+				<option value="SGD"> SGD </option>
+				<option value="THB"> THB </option>
+				<option value="ZAR"> ZAR </option>
 			</select>
 
-			<input type="submit" value="Convert"/></br>
-			<input type="hidden" value="454354353453543543"/>
+			<input id="convert" type="submit" value="Convert"/></br>
+			
 		</form>
+	<div id="result">
+		
+	</div>
+    <!--<script>
+			
+		function callback_get_rate( data ) {
+			obj = $.parseJSON(data);
+			val = $("#value").val();
+			
+			total= val+" "+obj.currency_from+" equals "+(val*((1/obj.val1)*obj.val2)).toFixed(4)+" "+obj.currency_to;
+			console.log(data);
+			
+			$( "#result" ).html( total );
+		}
+		
+		function get_rates() {
+			cur_from = $("#currency_from").val();
+			cur_to = $("#currency_to").val();
+			$.get( "get_rates", { currency_from: cur_from, currency_to: cur_to})
+				.done(callback_get_rate);
+		}
+		
+		
+		$("#convert").on("click", get_rates);
+	</script>--->
 	</div>
 </body>
 </html>
