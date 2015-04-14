@@ -1,21 +1,21 @@
-$.get("currency_from", function(data){
-	alert("Data Loaded: "+ currency_from);
-	
-	});
-	
-	
 
 
 
 
-//function myFunction(arr) {
-  //  var out = '<table border="1" style="width:10%"><caption>1 EURO</caption>';
-    //var i;
-    //for(i = 0; i < arr.length; i++) {
-    //    out += '<tr><td>' + arr[i].currency + '</td><td>' + arr[i].rate + '</td></tr>';
-    //}
-   // out += '</table>';
-   // document.getElementById("id01").innerHTML = out;
-//}
+var currencies = ["EUR", "USD", "JPY", "BGN", "CZK", "DKK", "GBP", "HUF", "PLN", "RON", "SEK", "CHF", "NOK", "HRK", "RUB", "TRY", "AUD", "BRL", "CAD", "CNY", "HKD", "IDR", "ILS", "INR", "KRW", "MXN", "MYR", "NZD", "PHP", "SGD", "THB", "ZAR"];
 
-//myFunction(currency)
+
+for(i = 0; i<currencies.length;i=i+2){ 
+	$.get( "get_rates", { currency_from: currencies[i], currency_to: currencies[i+1]})
+				.done(callback_get_rate);
+			}
+
+
+function callback_get_rate( data ) {
+			obj = $.parseJSON(data);
+			total = "1 "+obj.currency_from + " = " + (1/obj.val1).toFixed(4)  +" €"+ "</br>" + "1 "+obj.currency_to + " = " + obj.val2 + " €"  + "</br>"
+			$( "#id01" ).append( total );
+		}
+
+
+

@@ -8,8 +8,10 @@ class Service(object):
 	@cherrypy.expose
 	def index(self):
 		return open('index.html')
-		
+				
 	
+	
+		
 	@cherrypy.expose	
 	def get_rate(self, currency):
 		xml = urllib2.urlopen('http://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml')

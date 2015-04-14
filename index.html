@@ -5,10 +5,12 @@
 	<div id="id02">
 		<h1>Currency Converter</h1>
 	</div>
-	<div id="id01" align="center"></div>
-	<!--<script type="text/javascript" src="js"></script>-->
+	<div id="id01" align="center">
+	</br>
+	</div>
+	<script type="text/javascript" src="js"></script>
     <div id="id03">
-		<form action="js" method="get" name="f">
+		<form action="index" id="target" method="post" name="f">
 			</br>
 			<input id=value name=value value="1" size="5" maxlength="12"/></br>
 			
@@ -90,7 +92,7 @@
 	<div id="result">
 		
 	</div>
-    <!--<script>
+   <script>
 			
 		function callback_get_rate( data ) {
 			obj = $.parseJSON(data);
@@ -102,16 +104,17 @@
 			$( "#result" ).html( total );
 		}
 		
-		function get_rates() {
+		function get_rates(event) {
+			event.preventDefault();
 			cur_from = $("#currency_from").val();
 			cur_to = $("#currency_to").val();
 			$.get( "get_rates", { currency_from: cur_from, currency_to: cur_to})
 				.done(callback_get_rate);
 		}
 		
-		
-		$("#convert").on("click", get_rates);
-	</script>--->
+		$("#target").submit(get_rates);
+		<!--$("#convert").on("click", get_rates);
+	</script>
 	</div>
 </body>
 </html>
